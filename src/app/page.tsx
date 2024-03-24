@@ -1,7 +1,10 @@
-import AboutSection from "@/components/AboutSection";
-import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
-import ProjectSection from "@/components/ProjectSection";
+import AboutSection from "@/app/components/AboutSection";
+import HeroSection from "@/app/components/HeroSection";
+import Navbar from "@/app/components/Navbar";
+import ProjectSection from "@/app/components/ProjectSection";
+import AchievementsSection from "./components/AchievementsSection";
+import EmailSection from "./components/EmailSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -9,9 +12,12 @@ export default function Home() {
       <Navbar />
       <div className="containe mt-24 mx-auto px-12 py-4">
         <HeroSection />
-        <AboutSection/>
-        <ProjectSection/>
+        <AchievementsSection />
+        <AboutSection />
+        <ProjectSection />
+        <EmailSection />
       </div>
+      <Footer />
     </main>
   );
 }
