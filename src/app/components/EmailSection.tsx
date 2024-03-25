@@ -6,9 +6,11 @@ import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
     const data = {
       email: e.target.email.value,
       subject: e.target.subject.value,
@@ -36,6 +38,7 @@ const EmailSection = () => {
       console.log("Message sent.");
       setEmailSubmitted(true);
     }
+    setLoading(false)
   };
 
   return (
@@ -119,8 +122,9 @@ const EmailSection = () => {
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              disabled={loading}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         )}
