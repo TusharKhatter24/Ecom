@@ -6,6 +6,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
+
+  const handleDownload = (event: any) => {
+    event.preventDefault();
+    const cvUrl = "https://docs.google.com/document/d/1gvJiOfC_MEx-yLTo8Ho-NX3wsqgS2oJ5jNnatoocBUA/edit";
+    window.open(cvUrl, '_blank');
+  };
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -22,7 +29,7 @@ const HeroSection = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Tushar",
+                "Tushar Khatter",
                 1000,
                 "Software Engineer",
                 1000,
@@ -44,14 +51,23 @@ const HeroSection = () => {
             >
               Hire Me
             </Link>
-            <Link
-              href="/"
+            {/* <Link
+              href="https://docs.google.com/document/d/1gvJiOfC_MEx-yLTo8Ho-NX3wsqgS2oJ5jNnatoocBUA/edit"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
               </span>
-            </Link>
+            </Link> */}
+            <a
+              href="/"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
+              onClick={handleDownload}
+            >
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                Download CV
+              </span>
+            </a>
           </div>
         </motion.div>
         <motion.div
